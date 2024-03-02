@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+// Site class represents a website where ads can be displayed
 class Site {
     int siteId;
     int reservePrice;
@@ -15,6 +16,7 @@ class Site {
     }
 }
 
+// Ad class represents an advertisement that can be displayed on multiple sites
 class Ad {
     int adId;
     int bidPrice;
@@ -38,6 +40,7 @@ public class MiniAdServer {
         readAds(adsPath);
     }
 
+    // Read site data from a CSV file
     private void readSites(String path) {
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
@@ -53,6 +56,7 @@ public class MiniAdServer {
         }
     }
 
+    // Read ad data from a CSV file
     private void readAds(String path) {
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
@@ -72,6 +76,7 @@ public class MiniAdServer {
         }
     }
 
+    // Find the highest bidding ad for a given site and display its ID and second highest bid price
     public void findAd(int siteId) {
         int maxBid = 0;
         int secondMaxBid = 0;
